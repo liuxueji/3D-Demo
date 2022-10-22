@@ -2,6 +2,7 @@ var container, stats, controls, camera, scene, renderer, light;
 
 init();
 animate();
+
 function init() {
   // 创建实例
   container = document.createElement('div');
@@ -11,18 +12,18 @@ function init() {
   camera.position.set(0, 0, 15);
   // 创建画布
   scene = new THREE.Scene();
-  scene.background = new THREE.Color( 0xf0f0f0 );
+  scene.background = new THREE.Color(0xf0f0f0);
 
   // 创建灯光相关的
   camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.1, 10000);
   camera.position.set(12, 13, 12);
-  camera.lookAt( new THREE.Vector3(0, 0, 0));
+  camera.lookAt(new THREE.Vector3(0, 0, 0));
   scene.add(camera);
 
   // 渲染建模
-  light = new THREE.DirectionalLight( 0xffffff, 1 );
-  light.position.set( 5, 10, -1000 ).normalize();
-  light.intensity=0.2;//强度
+  light = new THREE.DirectionalLight(0xffffff, 1);
+  light.position.set(5, 10, -1000).normalize();
+  light.intensity = 0.2; //强度
   scene.add(light);
 
   var loader = new THREE.FBXLoader();
@@ -54,7 +55,7 @@ function init() {
 
   // stats
   stats = new Stats();
-  container.appendChild(stats.dom);
+  // container.appendChild(stats.dom);
 }
 
 function onWindowResize() {
